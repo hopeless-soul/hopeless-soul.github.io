@@ -1,0 +1,190 @@
+@keyframes blink {
+  /* Duration: 6s */
+  0%,  49% { opacity: 1; }
+  50%, 52% { opacity: 0; }
+  52%, 54% { opacity: 1; }
+  54%, 55% { opacity: 0; }
+  55%, 58% { opacity: 1; }
+  58%, 100%{ opacity: 1; }
+}
+
+@keyframes spark1 {
+  /* Duration: 12s */
+  0%,  24% { opacity: 0; top: 0; right: -49%;}
+  24%, 25% { opacity: 1; }
+  30% { right: -53%;}
+  40% { top: 64%; right: -55%; }
+  75%, 100% {opacity: 0;}
+}
+@keyframes spark2 {
+  /* Duration: 12s */
+  0%,  24% { opacity: 0; top: 0; right: -49%;}
+  24%, 25% { opacity: 1; top: -2%;}
+  26% {right: -70%;}
+  38%, 39% { right: -80%;}
+  40% { top: 64%; right: -85%; }
+  75%, 100% {opacity: 0;}
+}
+@keyframes spark3 {
+  /* Duration: 12s */
+  0%,  24% { opacity: 0; top: 0; right: -49%;}
+  24%, 25% { opacity: 1; top: -1%;}
+  26% {right: -80%;}
+  38%, 39% { right: -85%;}
+  45% { top: 64%; right: -85%; }
+  75%, 100% {opacity: 0;}
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.intro-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.intro-content {
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.intro-content:after {
+  content:"";
+  left: -10%;
+  width: 30%;  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: -o-linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  position: absolute;
+  z-index: 2;
+}
+.intro-content:before {
+  content:"";
+  right: -10%;
+  width: 30%;  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,1));
+  background: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,1));
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
+  position: absolute;
+  z-index: 2;
+}
+
+#intro {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+#back, #fence, #grass, #plants, #space, #katana, #zeroOff, #zero1, #zero2, .spark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+#space {
+  bottom: 15%;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#zeroOff, #zero1, #zero2, #katana, .spark {
+  top: 0;
+  margin: auto;
+  margin-top: 20%;
+  width: auto;
+  height: 20%;
+}
+.spark {
+  height: 0.5%;
+  right: -49%;
+  margin-top: 36%;
+  animation: spark1 12s infinite;
+}
+#spark1 {margin-top: 34%; animation: spark2 12s infinite;}
+#spark2 {right: -48%; animation: spark3 12s infinite;}
+#spark3 {}
+
+#zero1 {
+  left: -15%;
+  height: 26.06%;
+  margin-top: calc( 20vh - 3.03% );
+}
+#zero2 {
+  right: -37%;
+  height: 26.06%;
+  margin-top: calc( 20vh - 3.03% );
+  animation: blink 6s infinite;
+}
+#katana {
+  height: 24%;
+  top: -10%;
+}
+
+#introText {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 60%;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+#intoTextOutput {
+  height: 100px;
+  width: 100%;
+}
+#introText > div > p {
+  margin: 0;
+  padding: 0;
+}
+
+.nearest-neighbor {
+  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: pixelated; /* Chrome */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+.darker {
+  filter: brightness(85%);
+}
+.blur {
+  filter: blur(3px);
+  opacity: .5;
+}
+
+.content-wrap {
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 300px;
+}
