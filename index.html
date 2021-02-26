@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Katana BG</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="./resources/jquery_3.5.1.js"></script>
+  <script src="./resources/classes/cCharacter.js"></script>
+  <script src="./resources/classes/cDialog.js"></script>
+  <script src="./resources/scripts/scrGetParameters.js"></script>
+  <script src="./resources/scripts/scrGetColorFromString.js"></script>
+  <script src="./resources/scripts/scrEasyOutSine.js"></script>
+  <script src="./resources/scripts/scrCalculateRect.js"></script>
+  <script src="./resources/lilTools.js"></script>
+  <script src="main.js"></script>
+
+  <style>
+    #intoTextOutput > span, #intoTextTest > span {
+      font-family: CyberpunkWaifus;
+      src: url("./resources/CyberpunkWaifus.ttf");
+      font-size: 50px;
+      margin: 0;
+      padding: 0;
+      font-size: 300%;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-wrap">
+    <div class="intro-content">
+      <div id="intro">
+        <img id="back" class="darker" draggable="false" src="./pics/bg.jpg">
+
+        <img id="fence" draggable="false" src="./pics/spr_title_fence.png">
+        <img id="fence" class="blur" draggable="false" src="./pics/spr_title_fence.png">
+
+        <img id="space" class="darker nearest-neighbor" draggable="false" src="./pics/space.gif">
+        <img id="space" class="darker nearest-neighbor blur" draggable="false" src="./pics/space.gif">
+
+        <img id="zeroOff" class="nearest-neighbor" draggable="false" src="./pics/zero_off.png">
+
+        <img id="spark1" class="nearest-neighbor spark" draggable="false" src="./pics/spark.png">
+        <img id="spark2" class="nearest-neighbor spark" draggable="false" src="./pics/spark.png">
+        <img id="spark3" class="nearest-neighbor spark" draggable="false" src="./pics/spark.png">
+        <img id="spark1" class="blur spark" draggable="false" src="./pics/spark.png">
+        <img id="spark2" class="blur spark" draggable="false" src="./pics/spark.png">
+        <img id="spark3" class="blur spark" draggable="false" src="./pics/spark.png">
+        <img id="spark1" class="blur spark" draggable="false" src="./pics/spark.png">
+        <img id="spark2" class="blur spark" draggable="false" src="./pics/spark.png">
+        <img id="spark3" class="blur spark" draggable="false" src="./pics/spark.png">
+
+        <img id="zero1" class="nearest-neighbor" draggable="false" src="./pics/zero-1.png">
+        <img id="zero2" class="nearest-neighbor" draggable="false" src="./pics/zero-2.png">
+
+        <img id="katana" class="nearest-neighbor" draggable="false" src="./pics/spr_titlegraphic_big2.png">
+
+        <img id="grass" class="nearest-neighbor" draggable="false" src="./pics/spr_title_grass.png">
+        <img id="plants" draggable="false" src="./pics/plants.gif">
+
+
+
+        <div id="introText">
+          <div id="intoTextInput" hidden><p>\c[white]\fPress\f \t[40]\s[0,10]\a[0]\c[9999]any\s\c[white] \t[40]\s[0,10]button\s\a[2] to \c[red]\s[1,-1]\l[10]CONTINUE\l\s\c[pink]\f suffer\f\c[white].</p><p>Text</p></div>
+          <div id="intoTextTest" style="opacity: 0.0;"></div>
+          <div id="intoTextOutput"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-wrap" hidden="true">Text</div>
+</body>
+</html>
